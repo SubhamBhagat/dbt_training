@@ -1,24 +1,12 @@
 with customers as (
 
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from "DBT_TRYOUTS"."SUBHAMK_RAW"."CUSTOMERS"
+    select * from {{ ref('stg_customer') }}
 
 ),
 
 orders as (
 
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-
-    from "DBT_TRYOUTS"."SUBHAMK_RAW"."ORDERS"
-
+    select * from {{ ref('stg_order') }}
 ),
 
 customer_orders as (
