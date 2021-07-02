@@ -9,6 +9,10 @@ orders as (
     select * from {{ ref('stg_order') }}
 ),
 
+payments as (
+    select * from {{ ref('fct_payments') }}
+),
+
 customer_orders as (
 
     select
