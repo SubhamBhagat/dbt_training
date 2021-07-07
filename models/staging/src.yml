@@ -1,0 +1,9 @@
+version: 2
+
+
+sources:
+  - name: SUBHAMK_RAW
+    database: DBT_TRYOUTS
+    tables:
+      - name: customers
+      - name: orders

@@ -3,4 +3,4 @@
         first_name,
         last_name
 
-    from "DBT_TRYOUTS"."SUBHAMK_RAW"."CUSTOMERS"
+    from {{ source('SUBHAMK_RAW', 'CUSTOMERS') }}

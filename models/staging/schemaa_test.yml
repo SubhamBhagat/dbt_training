@@ -1,15 +1,19 @@
 version: 2
 
 models:
-  - name: stg_customers
+  - name: stg_customer
+    description: Staging for Customer RAW data in SubhamK DB
     columns: 
       - name: customer_id
+        description: Unique and not NULL Customer RAW data - Primary Key
         tests:
           - unique
           - not_null
-  - name: stg_orders
+  - name: stg_order
+    description: Staging for Orders RAW data in SubhamK DB
     columns: 
       - name: status
+        description: Status of the orders RAW data "{{doc('order_status')}}"
         tests:
           - accepted_values:
               values:
@@ -18,3 +22,9 @@ models:
                 - returned
                 - placed
                 - return_pending
+      - name: customer_id
+        tests:
+        - relationships:
+            to: ref('stg_customer')
+            field: customer_id
+          
