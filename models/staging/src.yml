@@ -5,5 +5,5 @@ sources:
   - name: SUBHAMK_RAW
     database: DBT_TRYOUTS
     tables:
-      - name: customers
-      - name: orders
+      - name: CUSTOMERS
+      - name: ORDERS

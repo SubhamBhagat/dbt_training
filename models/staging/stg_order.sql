@@ -4,6 +4,6 @@
         order_date,
         status
 
-    from "DBT_TRYOUTS"."SUBHAMK_RAW"."ORDERS"
+    from {{ source('SUBHAMK_RAW', 'ORDERS') }}
 
 
