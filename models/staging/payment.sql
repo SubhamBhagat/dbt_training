@@ -4,4 +4,4 @@
         paymentmethod as pay_method,
         status,
         amount/100 as amount
-    from "DBT_TRYOUTS"."SUBHAMK_RAW"."PAYMENTS"
+    from {{ source('SUBHAMK_RAW', 'PAYMENTS') }}
